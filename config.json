@@ -1,0 +1,7 @@
+{
+    "hotsDB" : "127.0.0.1",
+    "portDB" : "3306",
+    "userDb" : "root",
+    "passwordDB" : "",
+    "nameDB" : "list_go"
+}
