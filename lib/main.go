@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/lucashenriqueteixeira/list_go/router"
+	"github.com/lucashenriqueteixeira/list_go/lib/router"
 )
 
-func main(){
+func main() {
 	router.Routers()
 
 }
