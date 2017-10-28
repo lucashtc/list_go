@@ -1,10 +1,17 @@
-<!DOCTYPE>
-<html>
-    <head>
-        <title>Cadastro de contatos</title>
-    </head>
-    <body>
+{{define "title"}}Cadastro contato{{end}}
+{{define "head"}}{{end}}
+{{define "menu"}}{{end}}
 
+      <form method="POST" action="/cadastro">
+        <div class="form-group">
+          <label>Nome</label>
+          <input type="text" name="nome" placeholder="{{.Mensagem}}" class="form-control">
 
-    </body>
-</html>
+          <label>Celular</label>
+          <input type="text" name="celular" class="form-control">
+
+          <input type="submit">
+          {{.nome}}
+      
+        </div>
+      </form> 
