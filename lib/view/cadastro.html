@@ -2,16 +2,22 @@
 {{define "head"}}{{end}}
 {{define "menu"}}{{end}}
 
-      <form method="POST" action="/cadastro">
-        <div class="form-group">
-          <label>Nome</label>
-          <input type="text" name="nome" placeholder="{{.Mensagem}}" class="form-control">
+<div class="container-fluid">
+  <form method="POST" action="/cadastro">
 
+    <div class="row">
+
+        <div class="col-xs-3">
+          <label>Nome</label>
+          <input type="text" name="nome" class="form-control">
+      
           <label>Celular</label>
           <input type="text" name="celular" class="form-control">
-
-          <input type="submit">
-          {{.nome}}
-      
         </div>
-      </form> 
+      </div>
+    
+    <button class="btn btn-danger" name="cadastrar">Cadastrar Contato</button>
+
+    </div>
+  </form> 
+</div>
