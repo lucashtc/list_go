@@ -4,8 +4,24 @@
 
 Go/Golang
 Mysql
+dep
 
 #pkg
 
 github.com/julienschmidt/httprouter
 gopkg.in/yaml.v2
+
+
+#instalação
+
+go get "github.com/lucashenriqueteixeira/list_go"
+
+Na pasta "github.com/lucashenriqueteixeira/list_go" encontra-se o arquivo sql
+
+Nas pasta raiz o config.json deve ser configurado informações do banco de dados e nome da pasta raiz etc
+
+dep ensure
+
+cd src/github.com/lucashenriqueteixeira/list_go/lib
+
+go build main.go
