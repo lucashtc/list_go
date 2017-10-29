@@ -6,11 +6,6 @@ Go/Golang
 Mysql
 dep
 
-#pkg
-
-github.com/julienschmidt/httprouter
-gopkg.in/yaml.v2
-
 
 #instalação
 
