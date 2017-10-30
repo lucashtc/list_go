@@ -1,27 +1,43 @@
 package util
 
 import (
-	"encoding/json"
+	yaml "gopkg.in/yaml.v2"
 	"io/ioutil"
-	
+	"os"
 )
 
-func ConfigJson() (interface{}) {
+type Config struct {
+	DataBase
+	Admin
+}
 
-	type Config struct {
-		HotsDB string
-		PortDB string
-		UserDb string
-		PasswordDB string
-		NameDB string
-	}
-	var s Config
+type DataBase struct {
+	Host     string `yaml:"host"`
+	Password string `yaml:"password"`
+	User     string `yaml:"user"`
+	name     string `yaml:"name"`
+}
 
-	File, err := ioutil.ReadFile("c:/crud/src/github.com/lucashenriqueteixeira/list_go/config.json")
+type Admin struct {
+	Port string `yaml:"port"`
+}
+
+//carrega arquivo de configuração
+//Retorna fatal caso nao encontre o arquivo config.yml
+func ReadConfig() {
+	
+	FileConfig, err := ioutil.ReadFile("./config.yml")
 	VerifyErr(err)
 
-	err = json.Unmarshal(File,&s)
-	VerifyErr(err)
+	config := Config{}
+	yaml.Unmarshal(FileConfig,&config)
 
-	return s
+	os.Setenv("HOST",config.Host)
+	os.Setenv("PORT",config.Port)
+	os.Setenv("PASSWORD",config.Password)
+	os.Setenv("NAME",config.Password)
+	os.Setenv("USER",config.User)
+
+	os.Setenv("PORT_HTTP",config.Admin.Port)
+	
 }
