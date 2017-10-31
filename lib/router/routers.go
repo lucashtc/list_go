@@ -5,6 +5,7 @@ import (
 	"github.com/lucashenriqueteixeira/list_go/lib/controller"
 	"github.com/lucashenriqueteixeira/list_go/lib/server"
 	"net/http"
+
 )
 
 func Routers() {
@@ -13,9 +14,8 @@ func Routers() {
 	Router.GET("/cadastro",controller.HandleCadastro)
 
 	//Permite acesso a pasta /public/
-	Router.ServeFiles("/public/*filepath",http.Dir("/public/"))
+	Router.ServeFiles("/public/*filepath",http.Dir("public/"))
 
-	//Preciso tirar isso daqui.
 	server.InitServer(":80",Router)
 
 }
