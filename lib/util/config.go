@@ -4,7 +4,6 @@ import (
 	yaml "gopkg.in/yaml.v2"
 	"io/ioutil"
 	"os"
-	"fmt"
 )
 
 type Config struct {
